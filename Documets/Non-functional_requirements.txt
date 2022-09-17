@@ -1,0 +1,4 @@
+Interface language: Ukrainian, English
+Software requirements: Windows 8 — Windows 11 (x86 / x64)
+Database: Postgresql
+security requirements: protection of user data
