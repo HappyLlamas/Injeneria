@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamaReader", "LamaReader\LamaReader.csproj", "{76E47C81-8C7B-4EC2-815A-F464A4A8DCCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataImport", "DataImport\DataImport.csproj", "{AFACEFA5-6558-48FE-A806-30CBC4FBE29E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{76E47C81-8C7B-4EC2-815A-F464A4A8DCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E47C81-8C7B-4EC2-815A-F464A4A8DCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E47C81-8C7B-4EC2-815A-F464A4A8DCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFACEFA5-6558-48FE-A806-30CBC4FBE29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFACEFA5-6558-48FE-A806-30CBC4FBE29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFACEFA5-6558-48FE-A806-30CBC4FBE29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFACEFA5-6558-48FE-A806-30CBC4FBE29E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
