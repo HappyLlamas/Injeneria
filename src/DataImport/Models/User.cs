@@ -22,27 +22,13 @@ public class User
 	public DateTime UpdatedAt { get; set; }
 
 	public User()
-		: this(id: 0, email: "", username: "", password: "")
 	{
-		return;
-	}
-	
-	public User(
-		int id,
-		string email,
-		string username,
-		string password,
-		int userRole = 0)
-	{
-		this.Id = id;
-		this.Email = email;
-		this.Password = password;
-		this.Username = username;
-		this.Role = (UserRole)userRole;
+		this.Role = UserRole.USER;
 		this.Avatar = new byte[1];
 		this.UpdatedAt = DateTime.Now;
 		return;
 	}
+	
 
 	public override string ToString()
 	{
