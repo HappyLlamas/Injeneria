@@ -11,9 +11,9 @@ public class Book
 		ALLOWED,
 	}
 	
-	public int ID { get; set; }
+	public int Id { get; set; }
 	public string UrlToFile { get; set; }
-	public int PublisherID { get; set; }
+	public int PublisherId { get; set; }
 	public byte[]? TitularPhoto { get; set; }
 	public string Author { get; set; }
 	public string Name { get; set; }

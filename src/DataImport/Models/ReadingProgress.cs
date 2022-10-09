@@ -12,9 +12,9 @@ public class ReadingProgress
 		MIXED,
 	}
 	
-	public int ID { get; set; }
-	public int BookID { get; set; }
-	public int UserID { get; set; }
+	public int Id { get; set; }
+	public int BookId { get; set; }
+	public int UserId { get; set; }
 	public int LastPage { get; set; }
 	public bool IsFavourite { get; set; }
 	public BookTheme Theme { get; set; }

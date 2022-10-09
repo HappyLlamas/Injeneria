@@ -17,12 +17,12 @@ public static class Seeders
 			books[i] = new BookFactory().Get(
 				param: new Dictionary<string, object>()
 				{
-					{"ID", i},
+					{"Id", i},
 					{"Name", StaticData.Names[i]},
 					{"Author", StaticData.Authors[i]},
 					{"Descriptions", StaticData.Descriptions[i]},
 					{"Genre", RandomChoices<string>.FromArray(StaticData.Genres)},
-					{"PublisherID", RandomNumber.Next() % length},
+					{"PublisherId", RandomNumber.Next() % length},
 					{"UrlToFile", StaticData.Urls[i]},
 				});
 		}

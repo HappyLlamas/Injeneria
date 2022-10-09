@@ -13,7 +13,7 @@ public class User
 		ADMIN,
 	}
 	
-	public int ID { get; set; }
+	public int Id { get; set; }
 	public string Email { get; set; }
 	public string Username { get; set; }
 	public string Password { get; set; }
@@ -34,7 +34,7 @@ public class User
 		string password,
 		int userRole = 0)
 	{
-		this.ID = id;
+		this.Id = id;
 		this.Email = email;
 		this.Password = password;
 		this.Username = username;

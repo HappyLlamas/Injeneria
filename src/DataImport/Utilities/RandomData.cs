@@ -1,4 +1,5 @@
-﻿using DataImport.Models;
+﻿
+using DataImport.Models;
 using DataImport.Factories;
 using Faker;
 
@@ -36,7 +37,7 @@ public class RandomData
 			users[i] = new UserFactory().Get(
 				param: new Dictionary<string, object>()
 				{
-					{"ID", i},
+					{"Id", i},
 				});
 			Console.WriteLine(users[i]);
 		}
@@ -55,8 +56,8 @@ public class RandomData
 			books[i] = new BookFactory().Get(
 				param: new Dictionary<string, object>()
 				{
-					{"ID", i},
-					{"PublisherID", RandomChoices<User>.FromArray(publishers).ID},
+					{"Id", i},
+					{"PublisherId", RandomChoices<User>.FromArray(publishers).Id},
 					{"Genre", RandomChoices<string>.FromArray(StaticData.Genres)},
 					{"UrlToFile", Internet.Url()},
 				});
@@ -78,9 +79,9 @@ public class RandomData
 			bookmarks[i] = new BookmarkFactory().Get(
 				param: new Dictionary<string, object>()
 				{
-					{"ID", i},
-					{"UserID", RandomChoices<User>.FromArray(users).ID},
-					{"BookID", book.ID},
+					{"Id", i},
+					{"UserId", RandomChoices<User>.FromArray(users).Id},
+					{"BookId", book.Id},
 					{"PageNumber", RandomNumber.Next(book.PagesNumber)},
 				});
 		}
@@ -101,9 +102,9 @@ public class RandomData
 			progresses[i] = new ReadingProgressFactory().Get(
 				param: new Dictionary<string, object>()
 				{
-					{"ID", i},
-					{"UserID", RandomChoices<User>.FromArray(users).ID},
-					{"BookID", book.ID},
+					{"Id", i},
+					{"UserId", RandomChoices<User>.FromArray(users).Id},
+					{"BookId", book.Id},
 					{"LastPage", RandomNumber.Next(book.PagesNumber)},
 				});
 		}
