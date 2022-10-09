@@ -17,18 +17,9 @@ public class User
 	public string Email { get; set; }
 	public string Username { get; set; }
 	public string Password { get; set; }
-	public UserRole Role { get; set; }	
-	public byte[]? Avatar { get; set; }
-	public DateTime UpdatedAt { get; set; }
-
-	public User()
-	{
-		this.Role = UserRole.USER;
-		this.Avatar = new byte[1];
-		this.UpdatedAt = DateTime.Now;
-		return;
-	}
-	
+	public UserRole Role { get; set; } = UserRole.USER;
+	public byte[]? Avatar { get; set; } = new byte[1];
+	public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
 	public override string ToString()
 	{

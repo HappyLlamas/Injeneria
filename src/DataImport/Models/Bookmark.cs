@@ -10,10 +10,5 @@ public class Bookmark
 	public int UserId { get; set; }
 	public int PageNumber { get; set; }
 	public string Note { get; set; }
-	public DateTime UpdatedAt { get; set; }
-
-	public Bookmark()
-	{
-		this.UpdatedAt = DateTime.Now;
-	}
+	public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }
