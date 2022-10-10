@@ -19,5 +19,6 @@ public class ReadingProgress
 	public bool IsFavourite { get; set; }
 	public BookTheme Theme { get; set; } = BookTheme.WHITE;
 	public int FontSize { get; set; }
+	public string PathToFile { get; set; }
 	public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }
