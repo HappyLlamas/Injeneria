@@ -13,13 +13,36 @@ public class User
 		ADMIN,
 	}
 	
-	public int Id { get; set; }
+	public int ID { get; set; }
 	public string Email { get; set; }
 	public string Username { get; set; }
 	public string Password { get; set; }
-	public UserRole Role { get; set; } = UserRole.USER;
-	public byte[]? Avatar { get; set; } = new byte[1];
-	public DateTime UpdatedAt { get; set; } = DateTime.Now;
+	public UserRole Role { get; set; }	
+	public byte[]? Avatar { get; set; }
+	public DateTime UpdatedAt { get; set; }
+
+	public User()
+		: this(id: 0, email: "", username: "", password: "")
+	{
+		return;
+	}
+	
+	public User(
+		int id,
+		string email,
+		string username,
+		string password,
+		int userRole = 0)
+	{
+		this.ID = id;
+		this.Email = email;
+		this.Password = password;
+		this.Username = username;
+		this.Role = (UserRole)userRole;
+		this.Avatar = new byte[1];
+		this.UpdatedAt = DateTime.Now;
+		return;
+	}
 
 	public override string ToString()
 	{

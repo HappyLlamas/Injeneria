@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "40i7LAvecF3rC1xTLWL7iZdQVvV9h4j2SQ+DXoeTD/9XEMnwfBKH7QNysiSTqiPFQlBtE3bakrQkxNteMmSVTg==",
+  "dgSpecHash": "n6g3A26b3fNbW472yWgV63GO/0IrwkWXVDLRsP0iIEOD/7WCx4Ypc7Ewys4ZT33Yf3Kp4RiopwonT0C3uNzwdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Julian\\source\\repos\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
+  "projectFilePath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Julian\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Julian\\.nuget\\packages\\faker.net\\2.0.154\\faker.net.2.0.154.nupkg.sha512",

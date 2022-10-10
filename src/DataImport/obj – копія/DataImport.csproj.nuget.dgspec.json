@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj": {}
+    "C:\\ЛНУ\\Клакович\\LamaReader\\src\\DataImport\\DataImport.csproj": {}
   },
   "projects": {
-    "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj": {
+    "C:\\ЛНУ\\Клакович\\LamaReader\\src\\DataImport\\DataImport.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
-        "projectName": "LlamaRider_Core",
-        "projectPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
+        "projectUniqueName": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\DataImport\\DataImport.csproj",
+        "projectName": "DataImport",
+        "projectPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\DataImport\\DataImport.csproj",
         "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-        "outputPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\obj\\",
+        "outputPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\DataImport\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,21 +40,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Bogus": {
-              "target": "Package",
-              "version": "[34.0.2, )"
-            },
             "Faker.Net": {
               "target": "Package",
               "version": "[2.0.154, )"
-            },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.3, )"
             }
           },
           "imports": [

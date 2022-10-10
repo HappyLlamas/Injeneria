@@ -782,11 +782,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julian\\source\\repos\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
+      "projectUniqueName": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
       "projectName": "LlamaRider_Core",
-      "projectPath": "C:\\Users\\Julian\\source\\repos\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
+      "projectPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\LlamaRider_Core.csproj",
       "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julian\\source\\repos\\LlamaRider_Core\\LlamaRider_Core\\obj\\",
+      "outputPath": "C:\\ЛНУ\\Клакович\\LamaReader\\src\\LlamaRider_Core\\LlamaRider_Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config",

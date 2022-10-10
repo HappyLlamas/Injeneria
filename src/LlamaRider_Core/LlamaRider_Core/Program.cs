@@ -18,43 +18,35 @@ var reading_progress = new ControllerReadingProgress(connect);
 
 var count = 40;
 var users = RandomData.GenerateUsers(count);
-var books = RandomData.GenerateBooks(count, users);
-var bookmarks = RandomData.GenerateBookmarks(count, users, books);
-var reading_progresss = RandomData.GenerateReadingProgress(count, users, books);
+
+
+
 
 
 for (int i = 0; i < count; i++)
 {
     user.InsertAutoUser(users[i]);
-    //book.InsertAutoBook(books[i]);
-    //bookmark.InsertAutoBookmark(bookmarks[i]);
-    //reading_progress.InsertAutoReadingProgress(reading_progresss[i]);
-
 }
+
+var books = RandomData.GenerateBooks(count, users);
 for (int i = 0; i < count; i++)
 {
-    //user.InsertAutoUser(users[i]);
     book.InsertAutoBook(books[i]);
-    //bookmark.InsertAutoBookmark(bookmarks[i]);
-    //reading_progress.InsertAutoReadingProgress(reading_progresss[i]);
-
 }
+
+var reading_progresss = RandomData.GenerateReadingProgress(count, users, books);
 for (int i = 0; i < count; i++)
 {
-    //user.InsertAutoUser(users[i]);
-    //book.InsertAutoBook(books[i]);
-    bookmark.InsertAutoBookmark(bookmarks[i]);
-    //reading_progress.InsertAutoReadingProgress(reading_progresss[i]);
-
-}
-for (int i = 0; i < count; i++)
-{
-    //user.InsertAutoUser(users[i]);
-    //book.InsertAutoBook(books[i]);
-    //bookmark.InsertAutoBookmark(bookmarks[i]);
     reading_progress.InsertAutoReadingProgress(reading_progresss[i]);
+}
+
+var bookmarks = RandomData.GenerateBookmarks(count, reading_progresss);
+for (int i = 0; i < count; i++)
+{
+    bookmark.InsertAutoBookmark(bookmarks[i]);
 
 }
+
 
 //user.GetAllUsers();
 

@@ -22,17 +22,20 @@ namespace LlamaRider_Core.Controllers
         {
 
             string sqlQuery = string.Format("Insert Into reading_progress" +
-                   "(Id, BookID, UserID, LastPage, IsFavourite, FontSize) " +
-                   "Values(@id, @BookID, @UserID, @LastPage, @IsFavourite, @FontSize");
+                   "(Id, book_id, user_id, path_to_file, last_page, theme_id, is_favourite, font_size, updated_at) " +
+                   "Values(@id, @book_id, @user_id, @path_to_file, @last_page, @theme_id, @is_favourite, @font_size, @updated_at)");
 
             using (var sqlCommand = new NpgsqlCommand(sqlQuery, _connectHost))
             {
-                sqlCommand.Parameters.AddWithValue("@id", readingProgressFactory.ID);
-                sqlCommand.Parameters.AddWithValue("@BookID", readingProgressFactory.BookID);
-                sqlCommand.Parameters.AddWithValue("@UserID", readingProgressFactory.UserID);
-                sqlCommand.Parameters.AddWithValue("@LastPage", readingProgressFactory.LastPage);
-                sqlCommand.Parameters.AddWithValue("@IsFavourite", readingProgressFactory.IsFavourite);
-                sqlCommand.Parameters.AddWithValue("@FontSize", readingProgressFactory.FontSize);
+                sqlCommand.Parameters.AddWithValue("@id", readingProgressFactory.Id);
+                sqlCommand.Parameters.AddWithValue("@book_id", readingProgressFactory.BookId);
+                sqlCommand.Parameters.AddWithValue("@user_id", readingProgressFactory.UserId);
+                sqlCommand.Parameters.AddWithValue("@path_to_file", readingProgressFactory.PathToFile);
+                sqlCommand.Parameters.AddWithValue("@last_page", readingProgressFactory.LastPage % 30);
+                sqlCommand.Parameters.AddWithValue("@theme_id", (int)readingProgressFactory.Theme);
+                sqlCommand.Parameters.AddWithValue("@is_favourite", readingProgressFactory.IsFavourite);
+                sqlCommand.Parameters.AddWithValue("@font_size", readingProgressFactory.FontSize);
+                sqlCommand.Parameters.AddWithValue("@updated_at", readingProgressFactory.UpdatedAt);
 
                 sqlCommand.ExecuteNonQuery();
             }

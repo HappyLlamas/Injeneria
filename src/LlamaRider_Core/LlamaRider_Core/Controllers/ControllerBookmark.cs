@@ -22,15 +22,14 @@ namespace LlamaRider_Core.Controllers
         {
 
             string sqlQuery = string.Format("Insert Into bookmarks" +
-                   "(Id, BookID, UserID, PageNumber, Note) " +
-                   "Values(@id, @BookID, @UserID, @PageNumber, @Note)");
+                   "(Id, Reading_Progress_Id, Page_Number, Note) " +
+                   "Values(@id, @Reading_Progress_Id, @Page_Number, @Note)");
 
             using (var sqlCommand = new NpgsqlCommand(sqlQuery, _connectHost))
             {
-                sqlCommand.Parameters.AddWithValue("@id", bookmark.ID);
-                sqlCommand.Parameters.AddWithValue("@BookID", bookmark.BookID);
-                sqlCommand.Parameters.AddWithValue("@UserID", bookmark.UserID);
-                sqlCommand.Parameters.AddWithValue("@PageNumber", bookmark.PageNumber);
+                sqlCommand.Parameters.AddWithValue("@id", bookmark.Id);
+                sqlCommand.Parameters.AddWithValue("@Reading_Progress_Id", bookmark.ReadingProgressId);
+                sqlCommand.Parameters.AddWithValue("@Page_Number", bookmark.PageNumber);
                 sqlCommand.Parameters.AddWithValue("@Note", bookmark.Note);
 
                 sqlCommand.ExecuteNonQuery();

@@ -28,7 +28,7 @@ namespace LlamaRider_Core.Controllers
 
             using (var sqlCommand = new NpgsqlCommand(sqlQuery, _connectHost))
             {
-                sqlCommand.Parameters.AddWithValue("@id", user.ID);
+                sqlCommand.Parameters.AddWithValue("@id", user.Id);
                 sqlCommand.Parameters.AddWithValue("@username", user.Username);
                 sqlCommand.Parameters.AddWithValue("@email", user.Email);
                 sqlCommand.Parameters.AddWithValue("@passwordHash", user.Password);

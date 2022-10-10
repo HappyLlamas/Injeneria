@@ -26,8 +26,8 @@ namespace LlamaRider_Core.Controllers
 
             using (var sqlCommand = new NpgsqlCommand(sqlQuery, _connectHost))
             {
-                sqlCommand.Parameters.AddWithValue("@id", book.ID);
-                sqlCommand.Parameters.AddWithValue("@Publisher_ID", book.PublisherID);
+                sqlCommand.Parameters.AddWithValue("@id", book.Id);
+                sqlCommand.Parameters.AddWithValue("@Publisher_ID", book.PublisherId);
                 sqlCommand.Parameters.AddWithValue("@url_to_file", book.UrlToFile);
                 sqlCommand.Parameters.AddWithValue("@Author", book.Author);
                 sqlCommand.Parameters.AddWithValue("@Name", book.Name);

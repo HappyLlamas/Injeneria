@@ -1,4 +1,5 @@
-﻿using DataImport.Models;
+﻿
+using DataImport.Models;
 using DataImport.Factories;
 using Faker;
 
@@ -25,89 +26,87 @@ public static class StaticData
 
 public class RandomData
 {
-	public static User[] GenerateUsers(
-		int quantity)
-	{
-		User[] users = new User[quantity];
-		Random random = new Random();
-		
-		for (int i = 0; i < quantity; ++i)
-		{
-			users[i] = new UserFactory().Get(
-				param: new Dictionary<string, object>()
-				{
-					{"ID", i},
-				});
-			Console.WriteLine(users[i]);
-		}
-		
-		return (users);
-	}
+    public static User[] GenerateUsers(
+        int quantity)
+    {
+        User[] users = new User[quantity];
+        Random random = new Random();
 
-	public static Book[] GenerateBooks(
-		int quantity,
-		User[] publishers)
-	{
-		Book[] books = new Book[quantity];
-		
-		for (int i = 0; i < quantity; ++i)
-		{
-			books[i] = new BookFactory().Get(
-				param: new Dictionary<string, object>()
-				{
-					{"ID", i},
-					{"PublisherID", RandomChoices<User>.FromArray(publishers).ID},
-					{"Genre", RandomChoices<string>.FromArray(StaticData.Genres)},
-					{"UrlToFile", Internet.Url()},
-				});
-		}
-		
-		return (books);
-	}
-	
-	public static Bookmark[] GenerateBookmarks(
-		int quantity,
-		User[] users,
-		Book[] books)
-	{
-		Bookmark[] bookmarks = new Bookmark[quantity];
-		
-		for (int i = 0; i < quantity; ++i)
-		{
-			Book book = RandomChoices<Book>.FromArray(books);
-			bookmarks[i] = new BookmarkFactory().Get(
-				param: new Dictionary<string, object>()
-				{
-					{"ID", i},
-					{"UserID", RandomChoices<User>.FromArray(users).ID},
-					{"BookID", book.ID},
-					{"PageNumber", RandomNumber.Next(book.PagesNumber)},
-				});
-		}
-		
-		return (bookmarks);
-	}
-	
-	public static ReadingProgress[] GenerateReadingProgress(
-		int quantity,
-		User[] users,
-		Book[] books)
-	{
-		ReadingProgress[] progresses = new ReadingProgress[quantity];
-		
-		for (int i = 0; i < quantity; ++i)
-		{
-			Book book = RandomChoices<Book>.FromArray(books);
-			progresses[i] = new ReadingProgressFactory().Get(
-				param: new Dictionary<string, object>()
-				{
-					{"ID", i},
-					{"UserID", RandomChoices<User>.FromArray(users).ID},
-					{"BookID", book.ID},
-					{"LastPage", RandomNumber.Next(book.PagesNumber)},
-				});
-		}
-		
-		return (progresses);
-	}
+        for (int i = 0; i < quantity; ++i)
+        {
+            users[i] = new UserFactory().Get(
+                param: new Dictionary<string, object>()
+                {
+                    {"Id", i},
+                });
+            Console.WriteLine(users[i]);
+        }
+
+        return (users);
+    }
+
+    public static Book[] GenerateBooks(
+        int quantity,
+        User[] publishers)
+    {
+        Book[] books = new Book[quantity];
+
+        for (int i = 0; i < quantity; ++i)
+        {
+            books[i] = new BookFactory().Get(
+                param: new Dictionary<string, object>()
+                {
+                    {"Id", i},
+                    {"PublisherId", RandomChoices<User>.FromArray(publishers).Id},
+                    {"Genre", RandomChoices<string>.FromArray(StaticData.Genres)},
+                    {"UrlToFile", Internet.Url()},
+                });
+        }
+
+        return (books);
+    }
+
+    public static Bookmark[] GenerateBookmarks(
+        int quantity,
+        ReadingProgress[] progresses)
+    {
+        Bookmark[] bookmarks = new Bookmark[quantity];
+
+        for (int i = 0; i < quantity; ++i)
+        {
+            bookmarks[i] = new BookmarkFactory().Get(
+                param: new Dictionary<string, object>()
+                {
+                    {"Id", i},
+                    {"ReadingProgressId",
+                        RandomChoices<ReadingProgress>.FromArray(progresses).Id},
+                    {"PageNumber", RandomNumber.Next()},
+                });
+        }
+
+        return (bookmarks);
+    }
+
+    public static ReadingProgress[] GenerateReadingProgress(
+        int quantity,
+        User[] users,
+        Book[] books)
+    {
+        ReadingProgress[] progresses = new ReadingProgress[quantity];
+
+        for (int i = 0; i < quantity; ++i)
+        {
+            Book book = RandomChoices<Book>.FromArray(books);
+            progresses[i] = new ReadingProgressFactory().Get(
+                param: new Dictionary<string, object>()
+                {
+                    {"Id", i},
+                    {"UserId", RandomChoices<User>.FromArray(users).Id},
+                    {"BookId", book.Id},
+                    {"LastPage", RandomNumber.Next(book.PagesNumber)},
+                });
+        }
+
+        return (progresses);
+    }
 }

@@ -15,14 +15,8 @@ public static class Hashing
 		}
 		
 		byte[]? hash = SHA256.Create().ComputeHash(
-				buffer: Encoding.UTF8.GetBytes(s: pass));
-		StringBuilder str = new StringBuilder();
-
-		foreach (byte b in hash)
-		{
-			str.Append(b);
-		}
+				buffer: Encoding.ASCII.GetBytes(s: pass));
 		
-		return (str.ToString());
+		return (BitConverter.ToString(hash));
 	}
 }
