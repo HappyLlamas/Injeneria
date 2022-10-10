@@ -68,21 +68,19 @@ public class RandomData
 	
 	public static Bookmark[] GenerateBookmarks(
 		int quantity,
-		User[] users,
-		Book[] books)
+		ReadingProgress[] progresses)
 	{
 		Bookmark[] bookmarks = new Bookmark[quantity];
 		
 		for (int i = 0; i < quantity; ++i)
 		{
-			Book book = RandomChoices<Book>.FromArray(books);
 			bookmarks[i] = new BookmarkFactory().Get(
 				param: new Dictionary<string, object>()
 				{
 					{"Id", i},
-					{"UserId", RandomChoices<User>.FromArray(users).Id},
-					{"BookId", book.Id},
-					{"PageNumber", RandomNumber.Next(book.PagesNumber)},
+					{"ReadingProgressId", 
+						RandomChoices<ReadingProgress>.FromArray(progresses).Id},
+					{"PageNumber", RandomNumber.Next()},
 				});
 		}
 		
