@@ -14,4 +14,5 @@ public class BookFactory
 	public string Description { get; } = Lorem.Paragraph();
 	public float Rating { get; } = RandomNumber.Next() % 6;
 	public int PagesNumber { get; } = RandomNumber.Next();
+	public string UrlToFile { get; } = Internet.Url();
 }
