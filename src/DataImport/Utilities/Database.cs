@@ -3,16 +3,19 @@ using Npgsql;
 
 namespace DataImport.Utilities;
 
-public static class Database
+public class Database
 {
     public static NpgsqlConnection? Connect;
-    public static void FillValueToDatabase(int count)
+    public static void connetionOther()
     {
         ControllerUser._connectHost = Connect;
         ControllerBook._connectHost = Connect;
         ControllerBookmark._connectHost = Connect;
         ControllerReadingProgress._connectHost = Connect;
-        
+    }
+
+    public static void FillValueToDatabase(int count)
+    {
         var users = RandomData.GenerateUsers(count);
         
         for (var i = 0; i < count; i++)

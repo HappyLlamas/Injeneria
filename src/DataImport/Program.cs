@@ -1,4 +1,5 @@
-﻿using DataImport.Controller;
+﻿using System.Configuration;
+using DataImport.Controller;
 using DataImport.Utilities;
 using Npgsql;
 
@@ -12,10 +13,11 @@ public static class Program
 	{
 		const string connectionString = "Host=db.ikyuxfksnzysklzobngb.supabase.co;Database=postgres;User Id=postgres;Password=febL5712PTWDXh8M;";
 		var connect = new NpgsqlConnection(connectionString);
+		Database.Connect = connect;
+		Database.connetionOther();
 		
 		connect.Open();
-		Database.Connect = connect;
-		Database.FillValueToDatabase( 41);
+		Database.GetBooks();
 		connect.Close();
 		return;
 	}
