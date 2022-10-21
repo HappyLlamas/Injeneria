@@ -7,10 +7,6 @@ namespace DataImport.Controller;
 public class ControllerUser
 {
     public static NpgsqlConnection? _connectHost;
-    // public ControllerUser(NpgsqlConnection? connectHost)
-    // {
-    //     _connectHost = connectHost;
-    // }
 
     public static void InsertAutoUser(User user)
     {

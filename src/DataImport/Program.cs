@@ -13,8 +13,7 @@ public static class Program
 	{
 		const string connectionString = "Host=db.ikyuxfksnzysklzobngb.supabase.co;Database=postgres;User Id=postgres;Password=febL5712PTWDXh8M;";
 		var connect = new NpgsqlConnection(connectionString);
-		Database.Connect = connect;
-		Database.connetionOther();
+		Database.ConnetionOther(connect);
 		
 		connect.Open();
 		Database.GetBooks();

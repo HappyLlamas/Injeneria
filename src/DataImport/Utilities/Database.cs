@@ -5,13 +5,14 @@ namespace DataImport.Utilities;
 
 public class Database
 {
-    public static NpgsqlConnection? Connect;
-    public static void connetionOther()
+    public static NpgsqlConnection? _connect;
+    public static void ConnetionOther(NpgsqlConnection? connect)
     {
-        ControllerUser._connectHost = Connect;
-        ControllerBook._connectHost = Connect;
-        ControllerBookmark._connectHost = Connect;
-        ControllerReadingProgress._connectHost = Connect;
+        _connect = connect;
+        ControllerUser._connectHost = _connect;
+        ControllerBook._connectHost = _connect;
+        ControllerBookmark._connectHost = _connect;
+        ControllerReadingProgress._connectHost = _connect;
     }
 
     public static void FillValueToDatabase(int count)
