@@ -6,9 +6,9 @@ public class Book
 {
 	public enum StatusCode
 	{
-		NOT_ALLOWED,
-		IN_REVIEW,
-		ALLOWED,
+		NOT_ALLOWED = -1,
+		IN_REVIEW = 0,
+		ALLOWED = 1,
 	}
 	
 	public int Id { get; set; }

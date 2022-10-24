@@ -7,10 +7,10 @@ public class User
 {
 	public enum UserRole
 	{
-		USER,
-		AUTHOR,
-		EDITOR,
-		ADMIN,
+		USER = 0,
+		AUTHOR = 1,
+		EDITOR = 2,
+		ADMIN = 3,
 	}
 	
 	public int Id { get; set; }
