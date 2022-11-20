@@ -1,0 +1,229 @@
+﻿<Page x:Class="LamaReader.Pages.ReadingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LamaReader.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReadingPage">
+
+
+    <Page.Resources>
+        <Style x:Key="MenuOption" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid 
+        Background="LightGray">
+
+        <Grid
+            Background="DimGray"
+            Width="50"
+            HorizontalAlignment="Left">
+
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Image 
+                Source="../Resources/LlamaReaderMockups-20.png" 
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="1"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-17.png" 
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="2"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-16.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="3"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-15.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="4"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-14.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="5"/>
+        </Grid>
+
+        <Grid
+            Background="WhiteSmoke"
+            Width="200"
+            HorizontalAlignment="Left"
+            Margin="50,0,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                FontSize="30"
+                HorizontalAlignment="Right"
+                Grid.Row="1"
+                Grid.Column="0">
+                -
+            </TextBlock>
+            <TextBlock
+                FontSize="30"
+                HorizontalAlignment="Center"
+                Grid.Row="1"
+                Grid.Column="1">
+                Aa
+            </TextBlock>
+            <TextBlock
+                FontSize="30"
+                HorizontalAlignment="Left"
+                Grid.Row="1"
+                Grid.Column="2">
+                +
+            </TextBlock>
+            
+            <Image 
+                Source="../Resources/LlamaReaderMockups-50.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="3"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-51.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="4"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-52.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="5"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-53.png"
+                Width="35"
+                Grid.Column="0"
+                Grid.Row="6"/>
+
+            <TextBlock
+                VerticalAlignment="Center"
+                Grid.Row="3"
+                Grid.Column="1">
+                Dark Theme
+            </TextBlock>
+            <TextBlock
+                VerticalAlignment="Center"
+                Grid.Row="4"
+                Grid.Column="1">
+                Light Theme
+            </TextBlock>
+            <TextBlock
+                VerticalAlignment="Center"
+                Grid.Row="5"
+                Grid.Column="1">
+                Mixed Theme
+            </TextBlock>
+            <TextBlock
+                x:Name="NotesCount"
+                VerticalAlignment="Center"
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                Grid.Column="1">
+                0
+            </TextBlock>
+            <ListBox 
+                Margin="10,10,10,10"
+                Grid.Row="7"
+                Grid.ColumnSpan="3">
+            </ListBox>
+        </Grid>
+        
+        <Grid
+            Margin="250,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20px"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="20px"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                x:Name="BookName"
+                HorizontalAlignment="Center"
+                Grid.Row="1"
+                Grid.Column="1">
+                Test Name
+            </TextBlock>
+            
+            <TextBlock
+                x:Name="PageNumber"
+                HorizontalAlignment="Center"
+                Grid.Row="3"
+                Grid.Column="1">
+                ...
+            </TextBlock>
+
+            <Image 
+                Source="../Resources/LlamaReaderMockups-85.png"
+                Width="20"
+                Grid.Column="2"
+                Grid.Row="3"/>
+
+            <Image 
+                Source="../Resources/LlamaReaderMockups-48.png"
+                HorizontalAlignment="Left"
+                Width="20"
+                Grid.Column="2"
+                Grid.Row="2"/>
+            <Image 
+                Source="../Resources/LlamaReaderMockups-49.png"
+                HorizontalAlignment="Right"
+                Width="20"
+                Grid.Column="0"
+                Grid.Row="2"
+                />
+            <Canvas
+                x:Name="PageLayout"
+                Margin="10,0,10,0"
+                Background="White"
+                Grid.Row="2"
+                Grid.Column="1">
+            </Canvas>
+        </Grid>
+    </Grid>
+
+</Page>
