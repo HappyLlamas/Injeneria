@@ -1,0 +1,102 @@
+﻿<Page x:Class="LamaReader.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LamaReader"
+      xmlns:System="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="450
+      " d:DesignWidth="800"
+      Title="SignUp">
+
+    <Grid 
+        Background="White" 
+        x:Name="MainGrid">
+        
+        <Grid
+            Background="LightGray" 
+            Width="288" 
+            Height="342"
+            x:Name="SignUpBlock">
+
+            <TextBlock 
+                LineHeight="10" 
+                Width="120" 
+                Height="20" 
+                TextAlignment="Center" 
+                Margin="84,27,84,275">
+                    Sign Up
+            </TextBlock>
+
+            <TextBox 
+                Width="220"
+                Height="30" 
+                Margin="34,58,34,234"
+                Text="Email"
+                TextAlignment="Center"/>
+            <TextBox 
+                Width="220"
+                Height="30" 
+                Margin="34,101,34,191"
+                Text="Password"
+                TextAlignment="Center"/>
+            <TextBox 
+                Width="220"
+                Height="30" 
+                Margin="34,146,34,146"
+                Text="Confirm password"
+                TextAlignment="Center"/>
+
+            <Rectangle 
+                Fill="Black" 
+                Width="90"
+                Height="4" Margin="34,189,164,129"/>
+            <TextBlock 
+                LineHeight="10" 
+                Width="120" 
+                Height="20" 
+                TextAlignment="Center" 
+                Margin="84,181,84,121">
+                    OR
+                </TextBlock>
+            <Rectangle 
+                Fill="Black" 
+                Width="90"
+                Height="4" 
+                Margin="164,189,34,129"/>
+
+            <Image x:Name="FBImage"
+                Source="../Resources/LlamaReaderMockups-7.png" 
+                Margin="124,206,124,76" 
+                Loaded="LoadFBImage" />
+            <Image 
+                Source="../Resources/LlamaReaderMockups-8.png" 
+                Margin="198,206,50,76" />
+            <Image 
+                Source="../Resources/LlamaReaderMockups-9.png" 
+                Margin="50,206,198,76" />
+
+            <Button 
+                Click="SignUpClick"
+                Content="Sign Up"
+                Width="220" 
+                Height="30" 
+                Margin="34,257,34,35"/>
+
+            <TextBlock 
+                FontFamily="Sans Serif" 
+                LineHeight="10" 
+                Height="20" 
+                Margin="34,301,34,19"
+                TextAlignment="Center">
+                    Already have an account? 
+                <Hyperlink Click="GotoSignInClick">Sign In</Hyperlink>
+            </TextBlock>
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
