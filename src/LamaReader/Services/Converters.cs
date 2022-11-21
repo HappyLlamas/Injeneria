@@ -11,7 +11,7 @@ using Path = System.IO.Path;
 
 namespace LamaReader.Services
 {
-    class Converters
+    class DocumentConverter
     {
         private HtmlLoadOptions html_load_settings {get;} = new HtmlLoadOptions()
                 {
@@ -43,10 +43,14 @@ namespace LamaReader.Services
             dc.Save(output_path, new PdfSaveOptions { });
             return output_path;
         }
+        private string empty(string path)
+        {
+            return path;
+        }
         public string md_to_pdf(string path)
         {
             string output_path = Path.GetFileName(path) + ".pdf";
-            var text = File.ReadAllText("Input.md");
+            var text = File.ReadAllText(path);
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             string html_text = Markdown.ToHtml(text, pipeline);
             using (MemoryStream msInp = new MemoryStream(Encoding.ASCII.GetBytes(html_text)))
@@ -59,11 +63,12 @@ namespace LamaReader.Services
             public string to_pdf(string path)
         {
             return (new Dictionary<string, Func<string, string>> {
-                {"doc", doc_txt_to_pdf },
-                {"docx", doc_txt_to_pdf },
-                {"txt", doc_txt_to_pdf },
-                {"html", html_to_pdf },
-                {"md", md_to_pdf }
+                {".doc", doc_txt_to_pdf },
+                {".docx", doc_txt_to_pdf },
+                {".txt", doc_txt_to_pdf },
+                {".html", html_to_pdf },
+                {".md", md_to_pdf },
+                {".pdf", empty }
             })[Path.GetExtension(path)](path);
         }
                     

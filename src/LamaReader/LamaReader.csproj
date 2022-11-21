@@ -2,15 +2,36 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFramework>net6.0-windows7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Resources\LlamaReaderMockups-10.png" />
+      <None Remove="Resources\LlamaReaderMockups-14.png" />
+      <None Remove="Resources\LlamaReaderMockups-15.png" />
+      <None Remove="Resources\LlamaReaderMockups-16.png" />
+      <None Remove="Resources\LlamaReaderMockups-17.png" />
+      <None Remove="Resources\LlamaReaderMockups-19.png" />
+      <None Remove="Resources\LlamaReaderMockups-20.png" />
+      <None Remove="Resources\LlamaReaderMockups-48.png" />
+      <None Remove="Resources\LlamaReaderMockups-49.png" />
+      <None Remove="Resources\LlamaReaderMockups-50.png" />
+      <None Remove="Resources\LlamaReaderMockups-51.png" />
+      <None Remove="Resources\LlamaReaderMockups-52.png" />
+      <None Remove="Resources\LlamaReaderMockups-53.png" />
+      <None Remove="Resources\LlamaReaderMockups-7.png" />
+      <None Remove="Resources\LlamaReaderMockups-8.png" />
+      <None Remove="Resources\LlamaReaderMockups-85.png" />
+      <None Remove="Resources\LlamaReaderMockups-9.png" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="Ado" Version="1.1.1" />
       <PackageReference Include="Faker.Net" Version="2.0.154" />
       <PackageReference Include="ironocr" Version="2022.11.10109" />
+      <PackageReference Include="IronOcr.Languages.Ukrainian" Version="2020.11.2" />
       <PackageReference Include="Markdig.Signed" Version="0.30.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-preview.7.22376.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0-preview.7.22376.2">
@@ -22,10 +43,61 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0-preview.7" />
       <PackageReference Include="Pdfium.Net.SDK" Version="4.73.2704" />
       <PackageReference Include="PdfiumViewer" Version="2.13.0" />
-      <PackageReference Include="SautinSoft.Document" Version="5.6.8.16" />    </ItemGroup>
+      <PackageReference Include="SautinSoft.Document" Version="5.6.8.16" />
+      <PackageReference Include="unknown6656.WPFPixelShaderLibrary" Version="1.0.2" />    </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\" />
+      <Resource Include="Resources\LlamaReaderMockups-10.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-14.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-15.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-16.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-17.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-19.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-20.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-48.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-49.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-50.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-51.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-52.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-53.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-7.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-8.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-85.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Resources\LlamaReaderMockups-9.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

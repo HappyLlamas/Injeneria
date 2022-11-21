@@ -8,6 +8,12 @@ using IronOcr;
 using System.Threading;
 using System.Linq;
 using System.Diagnostics;
+using LamaReader.Services;
+using Microsoft.Win32;
+using Microsoft.EntityFrameworkCore.Query.Internal;
+using System.Windows.Automation;
+using wpfpslib;
+using System.Threading.Tasks;
 
 namespace LamaReader.Pages
 {
@@ -19,9 +25,37 @@ namespace LamaReader.Pages
         public ReadingPage()
         {
             InitializeComponent();
-            pdfViewer.LoadDocument("example.pdf");
             pdfViewer.ViewMode = Patagames.Pdf.Net.Controls.Wpf.ViewModes.Horizontal;
+        }
+        public void OpenDocument(string path)
+        {
+            pdfViewer.LoadDocument(new DocumentConverter().to_pdf(path));
+            pdfViewer.UpdateDefaultStyle();
+        }
+        private void BrowseButton(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "Document files(*.pdf;*.docx;*.doc;*.md;*.html;*.txt);|*.pdf;*.docx;*.doc;*.md;*.html;*.txt";
 
+            Nullable<bool> result = dialog.ShowDialog();
+            if (result == true)
+                OpenDocument(dialog.FileName);
+        }
+        public void DarkTheme(object sender, RoutedEventArgs e)
+        {
+            BookFilter.Opacity = 0;
+            pdfViewer.Effect = new InvertEffect();
+        }
+        public void SepiaTheme(object sender, RoutedEventArgs e)
+        {
+            pdfViewer.Effect = null;
+            BookFilter.Opacity = 0.15;
+            BookFilter.Color = Colors.Yellow;
+        }
+        public void LightTheme(object sender, RoutedEventArgs e)
+        {
+            pdfViewer.Effect = null;
+            BookFilter.Opacity = 0;
         }
         private void TheGrid_OnLoaded(object sender, RoutedEventArgs e)
         {
@@ -95,14 +129,15 @@ namespace LamaReader.Pages
             canvas.Children.Clear();
             start_point = canvas.PointToScreen(start_point);
             Point end_point = canvas.PointToScreen(e.GetPosition(canvas));
-            Thread thread = new Thread(() => CopyText(start_point, end_point));
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
+            
+            Task.Run(() => CopyText(start_point, end_point)).
+                ContinueWith(async_result => Application.Current.Dispatcher.Invoke(() => Clipboard.SetDataObject(async_result.Result)));
+                        
         }
-                private void CopyText(Point start_point, Point end_point)
+        private string CopyText(Point start_point, Point end_point)
         {
             if (this.start_point.X == end_point.X || this.start_point.Y == end_point.Y)
-                return;
+                return "";
             using (var bmp = new System.Drawing.Bitmap((int)Math.Abs(start_point.X - end_point.X),
                 (int)Math.Abs(start_point.Y - end_point.Y)))
             {
@@ -119,13 +154,13 @@ namespace LamaReader.Pages
 
             }
             var Ocr = new IronTesseract();
+            Ocr.Language = OcrLanguage.UkrainianFast;
+            Ocr.AddSecondaryLanguage(OcrLanguage.EnglishFast);
             using (var Input = new OcrInput())
             {
                 Input.AddImage("ScreenCapture.bmp");
                 var Result = Ocr.Read(Input);
-                Clipboard.SetDataObject(Result.Text);
-                Console.WriteLine(Result.Text);
-
+                return Result.Text;
             }
 
         }
