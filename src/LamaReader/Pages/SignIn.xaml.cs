@@ -1,17 +1,11 @@
-﻿using System;
+﻿using LamaReader.Data;
+using LamaReader.MainLogic;
+using LamaReader.Pages;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LamaReader
 {
@@ -19,8 +13,10 @@ namespace LamaReader
     /// Interaction logic for SignIn.xaml
     /// </summary>
     public partial class SignIn 
-        : Page
+        : Window
     {
+        private readonly IAuth _auth;
+        private readonly LlamaReaderDbContext dbContext;
         private static Dictionary<string, string> _strings
            = new Dictionary<string, string>()
            {
@@ -28,20 +24,20 @@ namespace LamaReader
                 { "MainPage", "/Pages/Main.xaml" },
            };
 
-        public SignIn()
+        public SignIn(IAuth auth, LlamaReaderDbContext dbContext)
         {
             InitializeComponent();
-            return;
+            _auth = auth;
+            this.dbContext = dbContext;
         }
 
         private void GotoSignUpClick(
             object sender, 
             RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(
-                source: new Uri(
-                    uriString: $".{_strings["SignUpPage"]}", 
-                    uriKind: UriKind.Relative));
+            SignUp signUp = new SignUp(_auth, dbContext);
+            signUp.Show();
+            Hide();
             return;
         }
 
@@ -49,10 +45,17 @@ namespace LamaReader
             object sender,
             RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(
-                source: new Uri(
-                    uriString: $".{_strings["MainPage"]}",
-                    uriKind: UriKind.Relative));
+
+            var email = Email.Text.ToString();
+            var password = Password.Text.ToString();
+            _auth.Login(email, password);
+            Main main = new Main(_auth,dbContext);
+            main.Show();
+            Hide();
+            //main.NavigationService.Navigate(
+            //    source: new Uri(
+            //        uriString: $".{_strings["MainPage"]}",
+            //        uriKind: UriKind.Relative));
             return;
         }
     }

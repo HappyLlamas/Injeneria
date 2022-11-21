@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LamaReader.Data;
+using LamaReader.MainLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,16 @@ namespace LamaReader.Pages
     /// <summary>
     /// Interaction logic for ReadingPage.xaml
     /// </summary>
-    public partial class ReadingPage : Page
+    public partial class ReadingPage : Window
     {
-        public ReadingPage()
+        private readonly IAuth auth;
+        private readonly LlamaReaderDbContext dbContext;
+
+        public ReadingPage(IAuth auth, LlamaReaderDbContext dbContext)
         {
             InitializeComponent();
+            this.auth = auth;
+            this.dbContext = dbContext;
         }
     }
 }
