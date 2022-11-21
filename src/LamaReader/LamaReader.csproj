@@ -10,6 +10,8 @@
     <ItemGroup>
       <PackageReference Include="Ado" Version="1.1.1" />
       <PackageReference Include="Faker.Net" Version="2.0.154" />
+      <PackageReference Include="ironocr" Version="2022.11.10109" />
+      <PackageReference Include="Markdig.Signed" Version="0.30.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-preview.7.22376.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0-preview.7.22376.2">
         <PrivateAssets>all</PrivateAssets>
@@ -18,7 +20,9 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.0-preview.7.22376.2" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0-preview.7" />
-    </ItemGroup>
+      <PackageReference Include="Pdfium.Net.SDK" Version="4.73.2704" />
+      <PackageReference Include="PdfiumViewer" Version="2.13.0" />
+      <PackageReference Include="SautinSoft.Document" Version="5.6.8.16" />    </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Resources\" />

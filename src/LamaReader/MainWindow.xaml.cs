@@ -27,7 +27,7 @@ namespace LamaReader
 
 			NavigationWindow window = new NavigationWindow();
 			window.Source = new Uri(
-				uriString: "./Pages/SignIn.xaml", 
+				uriString: "./Pages/ReadingPage.xaml", 
 				uriKind: UriKind.Relative);
             window.ShowsNavigationUI = false;
 			window.Closed += Window_Closed;
